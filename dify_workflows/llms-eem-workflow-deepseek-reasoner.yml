@@ -1,0 +1,689 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 多路径大模型事件抽取工作流迭代
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/siliconflow:0.0.40@c8cea16fdefcc5691ad24460dc8e0eb1a3ff4741e14d36114b2c8532c1a0584d
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/deepseek:0.0.15@725407927b04e236212083d20e92830d60fa944e42cd357ef6902c160414f6f1
+    version: null
+kind: app
+version: 0.5.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        single_chunk_attachment_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: knowledge-retrieval
+      id: 1750337155264-source-1776237724341-target
+      source: '1750337155264'
+      sourceHandle: source
+      target: '1776237724341'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: code
+      id: 1776237724341-source-1776238014105-target
+      source: '1776237724341'
+      sourceHandle: source
+      target: '1776238014105'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1776243391792-source-1776254677921-target
+      source: '1776243391792'
+      sourceHandle: source
+      target: '1776254677921'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 17762437678790-source-1776255660252-target
+      source: '17762437678790'
+      sourceHandle: source
+      target: '1776255660252'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1776254677921-source-1776255660252-target
+      source: '1776254677921'
+      sourceHandle: source
+      target: '1776255660252'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: end
+      id: 1776255660252-source-1750513022705-target
+      source: '1776255660252'
+      sourceHandle: source
+      target: '1750513022705'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1776261232578'
+        sourceType: iteration-start
+        targetType: llm
+      id: 1776261232578start-source-1776261485555-target
+      source: 1776261232578start
+      sourceHandle: source
+      target: '1776261485555'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInLoop: false
+        sourceType: iteration
+        targetType: code
+      id: 1776261232578-source-1776243391792-target
+      source: '1776261232578'
+      sourceHandle: source
+      target: '1776243391792'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: iteration
+        targetType: code
+      id: 1776261232578-source-17762437678790-target
+      source: '1776261232578'
+      sourceHandle: source
+      target: '17762437678790'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1776238014105-source-1776261824776-target
+      source: '1776238014105'
+      sourceHandle: source
+      target: '1776261824776'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: iteration
+      id: 1776261824776-source-1776261232578-target
+      source: '1776261824776'
+      sourceHandle: source
+      target: '1776261232578'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - label: text
+          max_length: 2048
+          options: []
+          required: true
+          type: paragraph
+          variable: text
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - image
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          label: activity_triggers
+          max_length: 2048
+          options: []
+          required: true
+          type: paragraph
+          variable: activity_triggers
+        - default: ''
+          hint: ''
+          label: document_name
+          max_length: 1000
+          options: []
+          placeholder: ''
+          required: true
+          type: paragraph
+          variable: document_name
+        - default: ''
+          hint: ''
+          label: context
+          max_length: 2048
+          options: []
+          placeholder: ''
+          required: true
+          type: paragraph
+          variable: context
+        - default: ''
+          hint: ''
+          label: activities
+          max_length: 1024
+          options: []
+          placeholder: ''
+          required: true
+          type: paragraph
+          variable: activities
+      height: 214
+      id: '1750337155264'
+      position:
+        x: -2525.0824081338196
+        y: 88.07272702761458
+      positionAbsolute:
+        x: -2525.0824081338196
+        y: 88.07272702761458
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1776255660252'
+          - result
+          value_type: string
+          variable: finalResult
+        selected: false
+        title: 结束
+        type: end
+      height: 90
+      id: '1750513022705'
+      position:
+        x: 2654.3863063060944
+        y: -20.13054094527159
+      positionAbsolute:
+        x: 2654.3863063060944
+        y: -20.13054094527159
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        dataset_ids:
+        - EtMI20cd4l0Q3fT458VCPI2vMP5mPlfxEBV2b+RSGAGbyhxf5X5Kq7Oig6hl3YGp
+        metadata_filtering_conditions:
+          conditions:
+          - comparison_operator: is
+            id: c0e12cf5-c61b-4bd3-b556-ca3612956eb4
+            name: document_name
+            value: '{{#1750337155264.document_name#}}'
+          logical_operator: and
+        metadata_filtering_mode: manual
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: netease-youdao/bce-reranker-base_v1
+            provider: langgenius/siliconflow/siliconflow
+          top_k: 4
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1750337155264'
+        - text
+        retrieval_mode: multiple
+        selected: false
+        title: 知识检索
+        type: knowledge-retrieval
+      height: 91
+      id: '1776237724341'
+      position:
+        x: -1893.9342680673928
+        y: 259.2574021108742
+      positionAbsolute:
+        x: -1893.9342680673928
+        y: 259.2574021108742
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "\ndef main(knowledge: list):\n    # 判断是否为空或None\n    if not knowledge:\n\
+          \        return {\n            \"result\": \"无抽取案例\"\n        }\n\n    contents\
+          \ = []\n\n    for item in knowledge:\n        if \"content\" in item and\
+          \ item[\"content\"]:\n            contents.append(item[\"content\"])\n\n\
+          \    # 如果提取后还是空（例如全是空content）\n    if not contents:\n        return {\n\
+          \            \"result\": \"无抽取案例\"\n        }\n\n    return {\n        \"\
+          result\": \"\\n\".join(contents)\n    }\n"
+        code_language: python3
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 知识库过滤
+        type: code
+        variables:
+        - value_selector:
+          - '1776237724341'
+          - result
+          value_type: array[object]
+          variable: knowledge
+      height: 53
+      id: '1776238014105'
+      position:
+        x: -1361.3613174633488
+        y: 313.62527784325073
+      positionAbsolute:
+        x: -1361.3613174633488
+        y: 313.62527784325073
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "def main(arg1: list, arg2: str):\n    ALL_LABELS = [label.strip() for\
+          \ label in arg2.split(\",\") if label.strip()]\n    vote_count = {label:\
+          \ 0 for label in ALL_LABELS}\n\n    for output in arg1:\n        if not\
+          \ output:\n            continue\n\n        for line in output.split(\"\\\
+          n\"):\n            line = line.strip()\n\n            if not line or \"\
+          依据\" in line:\n                continue\n\n            if \":\" in line:\n\
+          \                key, value = line.split(\":\", 1)\n                key\
+          \ = key.strip()\n                value = value.strip()\n\n             \
+          \   if key in vote_count and value == \"1\":\n                    vote_count[key]\
+          \ += 1\n\n    low_conf = [k for k, v in vote_count.items() if v < 4]\n\n\
+          \    return {\n        \"result\": \"\\n\".join(low_conf) if low_conf else\
+          \ \"无\"\n    }"
+        code_language: python3
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 信度量化
+        type: code
+        variables:
+        - value_selector:
+          - '1776261232578'
+          - output
+          value_type: array[string]
+          variable: arg1
+        - value_selector:
+          - '1750337155264'
+          - activities
+          value_type: string
+          variable: arg2
+      height: 53
+      id: '1776243391792'
+      position:
+        x: 779.8784106882322
+        y: 691.5765297748944
+      positionAbsolute:
+        x: 779.8784106882322
+        y: 691.5765297748944
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "def main(arg1: list, arg2: str):\n    ALL_LABELS = [label.strip() for\
+          \ label in arg2.split(\",\") if label.strip()]\n    vote_count = {label:\
+          \ 0 for label in ALL_LABELS}\n\n    for output in arg1:\n        if not\
+          \ output:\n            continue\n\n        for line in output.split(\"\\\
+          n\"):\n            line = line.strip()\n\n            if not line or \"\
+          依据\" in line:\n                continue\n\n            if \":\" in line:\n\
+          \                key, value = line.split(\":\", 1)\n                key\
+          \ = key.strip()\n                value = value.strip()\n\n             \
+          \   if key in vote_count and value == \"1\":\n                    vote_count[key]\
+          \ += 1\n\n    high_conf = [k for k, v in vote_count.items() if v >= 4]\n\
+          \n    return {\n        \"result\": \"\\n\".join(high_conf) if high_conf\
+          \ else \"无\"\n    }"
+        code_language: python3
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 信度量化2
+        type: code
+        variables:
+        - value_selector:
+          - '1776261232578'
+          - output
+          value_type: array[string]
+          variable: arg1
+        - value_selector:
+          - '1750337155264'
+          - activities
+          value_type: string
+          variable: arg2
+      height: 53
+      id: '17762437678790'
+      position:
+        x: 678.055032619815
+        y: 259.2574021108742
+      positionAbsolute:
+        x: 678.055032619815
+        y: 259.2574021108742
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            max_tokens: 8192
+          mode: chat
+          name: deepseek-reasoner
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: e7908889-abd3-41ef-96e0-fc326c66144c
+          role: system
+          text: "#角色\r\n你是一位过程挖掘与自然语言处理领域的专家，严格按照给定的证据判断活动是否存在，避免出现错误判断。\n\r#验证规则\r\
+            \n1.待验证活动来自10次独立抽取中未达高置信度的活动集合。\n\r2.基于以下存在的证据进行判断：\r\n（1）当前消息语句语义及其上下文语境\r\
+            \n（2）10次抽取结果及其依据\r\n（3）抽取示例语义模式\n（4）活动触发词词义\n\r3.在已有的证据中，判断这些活动是否存在。\r\
+            \n4.禁止猜测或编造未出现的信息。\r\n#输出\r\n按照键值对的格式分行输出验证结果，分行输出结果。例子如下\r\nProvide URL:0/1\r\
+            \nInvestigate Issue:0/1\n\r1 表示活动存在，0 表示活动不存在。\r"
+        - id: 771b52d6-59c7-477a-93f5-4436f8a508f6
+          role: user
+          text: "我会为你提供所需的分析文本与相关的上下文，请逐步推理，得出验证结论。\n\r当前消息:{{#1750337155264.text#}}\r\
+            \r\n消息上下文:{{#1750337155264.context#}}\n待验证活动集合：{{#1776243391792.result#}}\r\
+            \r\n10次抽取结果及依据:{{#1776261232578.output#}}\r\r\n抽取示例:{{#1776238014105.result#}}\r\
+            \r\n活动及触发词:{{#1750337155264.activity_triggers#}}\r"
+        reasoning_format: separated
+        selected: false
+        title: 验证
+        type: llm
+        vision:
+          enabled: false
+      height: 89
+      id: '1776254677921'
+      position:
+        x: 1288.1815688207441
+        y: 644.7213067378982
+      positionAbsolute:
+        x: 1288.1815688207441
+        y: 644.7213067378982
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "def main(arg1: str, arg2: str, arg3: str):\n    # =========================\n\
+          \    # 1. 解析预定义标签集合\n    # =========================\n    ALL_LABELS = [x.strip()\
+          \ for x in arg3.split(\",\") if x.strip()]\n\n    # =========================\n\
+          \    # 2. 初始化所有标签为0\n    # =========================\n    label_map = {label:\
+          \ 0 for label in ALL_LABELS}\n\n    # =========================\n    # 3.\
+          \ 解析输入（兼容“无”、空字符串、两种格式）\n    # =========================\n    def parse_input(data:\
+          \ str):\n        # ✅ 处理 None / \"\" / \"无\"\n        if not data or data.strip()\
+          \ == \"无\":\n            return []\n\n        results = []\n\n        for\
+          \ line in data.split(\"\\n\"):\n            line = line.strip()\n\n    \
+          \        # 跳过空行和“无”\n            if not line or line == \"无\":\n       \
+          \         continue\n\n            # 情况1：Delivery:1\n            if \":\"\
+          \ in line:\n                key, value = line.split(\":\", 1)\n        \
+          \        key = key.strip()\n                value = value.strip()\n\n  \
+          \              # 只要 value == 1\n                if value == \"1\":\n   \
+          \                 results.append(key)\n\n            # 情况2：只有标签名\n     \
+          \       else:\n                results.append(line)\n\n        return results\n\
+          \n    # =========================\n    # 4. 合并 arg1 + arg2\n    # =========================\n\
+          \    labels = set(parse_input(arg1) + parse_input(arg2))\n\n    # =========================\n\
+          \    # 5. 填充0/1（只认合法标签）\n    # =========================\n    for label\
+          \ in labels:\n        if label in label_map:\n            label_map[label]\
+          \ = 1\n\n    # =========================\n    # 6. 输出格式化字符串\n    # =========================\n\
+          \    result = \"\\n\".join(\n        f\"{label}:{label_map[label]}\"\n \
+          \       for label in ALL_LABELS\n    )\n\n    return {\n        \"result\"\
+          : result\n    }"
+        code_language: python3
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 最终结果组合
+        type: code
+        variables:
+        - value_selector:
+          - '1776254677921'
+          - text
+          value_type: string
+          variable: arg1
+        - value_selector:
+          - '17762437678790'
+          - result
+          value_type: string
+          variable: arg2
+        - value_selector:
+          - '1750337155264'
+          - activities
+          value_type: string
+          variable: arg3
+      height: 53
+      id: '1776255660252'
+      position:
+        x: 1967.0075265890005
+        y: 197.1376304524934
+      positionAbsolute:
+        x: 1967.0075265890005
+        y: 197.1376304524934
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        error_handle_mode: terminated
+        flatten_output: true
+        height: 177
+        is_parallel: true
+        iterator_input_type: array[number]
+        iterator_selector:
+        - '1776261824776'
+        - result
+        output_selector:
+        - '1776261485555'
+        - text
+        output_type: array[string]
+        parallel_nums: 10
+        selected: false
+        start_node_id: 1776261232578start
+        title: 迭代
+        type: iteration
+        width: 387
+      height: 177
+      id: '1776261232578'
+      position:
+        x: -358.36954566537474
+        y: 537.9335596139493
+      positionAbsolute:
+        x: -358.36954566537474
+        y: 537.9335596139493
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 387
+      zIndex: 1
+    - data:
+        desc: ''
+        isInIteration: true
+        selected: false
+        title: ''
+        type: iteration-start
+      draggable: false
+      height: 48
+      id: 1776261232578start
+      parentId: '1776261232578'
+      position:
+        x: 24
+        y: 68
+      positionAbsolute:
+        x: -334.36954566537474
+        y: 605.9335596139493
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-iteration-start
+      width: 44
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1776261232578'
+        model:
+          completion_params:
+            max_tokens: 8192
+          mode: chat
+          name: deepseek-reasoner
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 163338b4-4788-45c7-9fa5-a7f20b95985d
+          role: system
+          text: "#角色\r\n你是一位过程挖掘与自然语言处理领域的专家，能够严谨地分析自然语言文本并抽取其中的活动。\r\n#分析规则\n\r\n\
+            \r1.案例和触发词参考：首先参考提供的活动抽取示例和触发词来调整抽取逻辑，抽取出活动。\n2.语义分析：其次结合消息上下文，对当前消息进行语义分析，补充第1步抽取出的活动。\r\
+            \n3.依据输出：给出简短的抽取依据，不超过150字。\r\n#输出\r\n输出格式仿照以下键值对的格式分行输出分类结果和依据，例如：\n\r\
+            Provide URL:0/1\n\rInvestigate Issue:0/1\r\n依据:消息中明确请求提供“https://t.co”（触发词），并提到“check”（抽取示例）。\r\
+            1表示语句中存在该活动，0则表示没有。"
+        - id: bab7401f-7b89-4923-80bf-59e5addcd75d
+          role: user
+          text: "我会为你提供所需的分析文本与相关的上下文，请逐步推理，得出结论。\r\n当前消息:{{#1750337155264.text#}}\r\
+            \n消息上下文:{{#1750337155264.context#}}\n抽取示例:{{#1776238014105.result#}}\r\
+            \r\n活动及触发词:{{#1750337155264.activity_triggers#}}"
+        reasoning_format: separated
+        selected: true
+        title: LLM 7
+        type: llm
+        vision:
+          enabled: false
+      height: 89
+      id: '1776261485555'
+      parentId: '1776261232578'
+      position:
+        x: 128
+        y: 65
+      positionAbsolute:
+        x: -230.36954566537474
+        y: 602.9335596139493
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+      zIndex: 1002
+    - data:
+        code: "def main(arg1:str):\n    return {\n        \"result\": list(range(1,\
+          \ 6))  # [1,2,...,10]\n    }"
+        code_language: python3
+        outputs:
+          result:
+            children: null
+            type: array[number]
+        selected: false
+        title: 代码执行 5
+        type: code
+        variables:
+        - value_selector:
+          - '1776238014105'
+          - result
+          value_type: string
+          variable: arg1
+      height: 53
+      id: '1776261824776'
+      position:
+        x: -837.9746708693883
+        y: 537.9335596139493
+      positionAbsolute:
+        x: -837.9746708693883
+        y: 537.9335596139493
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    viewport:
+      x: 1216.767198067104
+      y: 306.00780960960753
+      zoom: 0.8408964000543263
+  rag_pipeline_variables: []
