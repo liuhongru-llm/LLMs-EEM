@@ -31,7 +31,10 @@ LLMs-EEM/
     ├── environment.yml        # conda environment (Python 3.10)
     ├── data/
     │   ├── labeled/           # annotated datasets (300 inbound messages x 3 companies)
-    │   └── keywords-template/ # trigger-word base (one sheet per dataset)
+    │   ├── keywords-template/ # trigger-word base (one sheet per dataset)
+    │   └── case_base/         # retrieval case base (180 annotated cases with rationales,
+    │                           # 6 files: 3 companies x inbound/outbound; load into Dify
+    │                           # as the workflow's knowledge dataset)
     ├── WorkFlow/              # LLMs-EEM (full) predictions, per backbone
     ├── WorkFlow_no_RAG/       # ablation: without RAG case retrieval
     ├── WorkFlow_no_self/      # ablation: without self-consistency (single extraction pass)
@@ -59,8 +62,9 @@ Event extraction is orchestrated by [Dify](https://dify.ai). Set it up once:
 
 1. **Deploy Dify.** Either self-host it via Docker Compose ([installation guide](https://docs.dify.ai/)) or use Dify Cloud. The default endpoint in `Extraction.py` assumes a self-hosted instance at `http://localhost` — change `ENDPOINT` if yours differs.
 2. **Import the workflow.** In Dify, create a new app from DSL and upload `dify_workflows/llms-eem-workflow-deepseek-reasoner.yml` (or the Gemini 3 Pro variant).
-3. **Configure model providers.** In Dify settings, add credentials for the model plugins used by the workflow (DeepSeek and SiliconFlow; the Gemini workflow uses the corresponding Gemini provider).
-4. **Publish the workflow**, then open the app's *API Access* page and create an API key.
+3. **Bind the case base.** Create a Dify knowledge dataset from `event_extraction/data/case_base/*.txt` (one dataset per file, or one dataset per company) and re-bind the workflow's knowledge-retrieval node to it, since imported DSLs reference the original dataset IDs.
+4. **Configure model providers.** In Dify settings, add credentials for the model plugins used by the workflow (DeepSeek and SiliconFlow; the Gemini workflow uses the corresponding Gemini provider).
+5. **Publish the workflow**, then open the app's *API Access* page and create an API key.
 
 The additional DSL `coarse-grained-time-computation.yml` is the workflow used for the coarse-grained temporal annotations of the event log.
 
