@@ -1,0 +1,43 @@
+gold trace counts per dataset (from LLMs-EEM DS-R file, gold columns):
+  SpotifyCares: 108 traces, 301 messages, 589 gold events
+  AppleSupport: 102 traces, 301 messages, 663 gold events
+  AmazonHelp: 98 traces, 301 messages, 529 gold events
+LLMs-EEM (DS-R)      AmazonHelp     msgs=301 traces= 98 traceEM=0.398 setEM=0.469 J=0.859 DFG-F1=0.877 (P=0.855 R=0.901) wDFG-F1=0.865
+LLMs-EEM (DS-R)      AppleSupport   msgs=301 traces=102 traceEM=0.461 setEM=0.520 J=0.893 DFG-F1=0.912 (P=0.907 R=0.916) wDFG-F1=0.920
+LLMs-EEM (DS-R)      SpotifyCares   msgs=301 traces=108 traceEM=0.472 setEM=0.509 J=0.858 DFG-F1=0.867 (P=0.834 R=0.902) wDFG-F1=0.859
+LLMs-EEM (DS-R)      OVERALL        msgs=903 traces=308 traceEM=0.445 setEM=0.500 J=0.870 DFG-F1=0.882 (P=0.861 R=0.903) wDFG-F1=0.885
+
+LLMs-EEM (Gemini)    AmazonHelp     msgs=301 traces= 98 traceEM=0.439 setEM=0.500 J=0.875 DFG-F1=0.885 (P=0.870 R=0.901) wDFG-F1=0.882
+LLMs-EEM (Gemini)    AppleSupport   msgs=301 traces=102 traceEM=0.382 setEM=0.471 J=0.876 DFG-F1=0.900 (P=0.922 R=0.879) wDFG-F1=0.907
+LLMs-EEM (Gemini)    SpotifyCares   msgs=301 traces=108 traceEM=0.491 setEM=0.519 J=0.855 DFG-F1=0.831 (P=0.824 R=0.838) wDFG-F1=0.845
+LLMs-EEM (Gemini)    OVERALL        msgs=903 traces=308 traceEM=0.438 setEM=0.497 J=0.868 DFG-F1=0.862 (P=0.860 R=0.864) wDFG-F1=0.879
+
+Zero-shot (DS-R)     AmazonHelp     msgs=301 traces= 98 traceEM=0.296 setEM=0.367 J=0.817 DFG-F1=0.836 (P=0.825 R=0.847) wDFG-F1=0.846
+Zero-shot (DS-R)     AppleSupport   msgs=301 traces=102 traceEM=0.186 setEM=0.265 J=0.804 DFG-F1=0.798 (P=0.802 R=0.794) wDFG-F1=0.812
+Zero-shot (DS-R)     SpotifyCares   msgs=301 traces=108 traceEM=0.148 setEM=0.176 J=0.697 DFG-F1=0.707 (P=0.703 R=0.711) wDFG-F1=0.649
+Zero-shot (DS-R)     OVERALL        msgs=903 traces=308 traceEM=0.208 setEM=0.266 J=0.771 DFG-F1=0.768 (P=0.762 R=0.775) wDFG-F1=0.768
+
+Zero-shot (Gemini)   AmazonHelp     msgs=301 traces= 98 traceEM=0.245 setEM=0.306 J=0.780 DFG-F1=0.806 (P=0.829 R=0.784) wDFG-F1=0.790
+Zero-shot (Gemini)   AppleSupport   msgs=301 traces=102 traceEM=0.167 setEM=0.235 J=0.748 DFG-F1=0.806 (P=0.798 R=0.813) wDFG-F1=0.783
+Zero-shot (Gemini)   SpotifyCares   msgs=301 traces=108 traceEM=0.185 setEM=0.185 J=0.699 DFG-F1=0.709 (P=0.701 R=0.717) wDFG-F1=0.654
+Zero-shot (Gemini)   OVERALL        msgs=903 traces=308 traceEM=0.198 setEM=0.240 J=0.741 DFG-F1=0.766 (P=0.764 R=0.768) wDFG-F1=0.741
+
+
+=== full table ===
+            method      dataset  n_msgs  n_traces  trace_exact  set_exact  jaccard    dfg_P    dfg_R   dfg_F1  dfg_P_w  dfg_R_w  dfg_F1_w
+   LLMs-EEM (DS-R)   AmazonHelp     301        98     0.397959   0.469388 0.859054 0.854701 0.900901 0.877193 0.846667 0.883991  0.864926
+   LLMs-EEM (DS-R) AppleSupport     301       102     0.460784   0.519608 0.893341 0.907407 0.915888 0.911628 0.900855 0.939394  0.919721
+   LLMs-EEM (DS-R) SpotifyCares     301       108     0.472222   0.509259 0.858111 0.834225 0.901734 0.866667 0.842315 0.877339  0.859470
+   LLMs-EEM (DS-R)      OVERALL     903       308     0.444805   0.500000 0.870078 0.860697 0.903394 0.881529 0.866536 0.903598  0.884679
+ LLMs-EEM (Gemini)   AmazonHelp     301        98     0.438776   0.500000 0.874749 0.869565 0.900901 0.884956 0.896882 0.867749  0.882075
+ LLMs-EEM (Gemini) AppleSupport     301       102     0.382353   0.470588 0.876053 0.921569 0.878505 0.899522 0.895652 0.918004  0.906690
+ LLMs-EEM (Gemini) SpotifyCares     301       108     0.490741   0.518519 0.855064 0.823864 0.838150 0.830946 0.845833 0.844075  0.844953
+ LLMs-EEM (Gemini)      OVERALL     903       308     0.438312   0.496753 0.868278 0.859740 0.864230 0.861979 0.879755 0.879158  0.879457
+  Zero-shot (DS-R)   AmazonHelp     301        98     0.295918   0.367347 0.817027 0.824561 0.846847 0.835556 0.820961 0.872390  0.845894
+  Zero-shot (DS-R) AppleSupport     301       102     0.186275   0.264706 0.804052 0.801887 0.794393 0.798122 0.776144 0.851254  0.811966
+  Zero-shot (DS-R) SpotifyCares     301       108     0.148148   0.175926 0.697308 0.702857 0.710983 0.706897 0.597173 0.711579  0.649376
+  Zero-shot (DS-R)      OVERALL     903       308     0.207792   0.266234 0.770751 0.761538 0.775457 0.768435 0.727384 0.812842  0.767742
+Zero-shot (Gemini)   AmazonHelp     301        98     0.244898   0.306122 0.780252 0.828571 0.783784 0.805556 0.774554 0.805104  0.789534
+Zero-shot (Gemini) AppleSupport     301       102     0.166667   0.235294 0.747907 0.798165 0.813084 0.805556 0.767123 0.798574  0.782533
+Zero-shot (Gemini) SpotifyCares     301       108     0.185185   0.185185 0.698981 0.700565 0.716763 0.708571 0.601045 0.717256  0.654028
+Zero-shot (Gemini)      OVERALL     903       308     0.198052   0.240260 0.741043 0.763636 0.767624 0.765625 0.710461 0.774610  0.741150

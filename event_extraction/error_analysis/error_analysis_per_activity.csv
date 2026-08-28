@@ -1,0 +1,309 @@
+﻿Dataset,Method,Activity,Support,TP,FP,FN
+AmazonHelp,LLMs-EEM DS-R,Provide URL,86,86,0,0
+AmazonHelp,LLMs-EEM DS-R,Request to not send personal details,9,9,1,0
+AmazonHelp,LLMs-EEM DS-R,Provide delivery date,9,6,1,3
+AmazonHelp,LLMs-EEM DS-R,Apologize,66,66,0,0
+AmazonHelp,LLMs-EEM DS-R,Refer to specialist team,14,11,1,3
+AmazonHelp,LLMs-EEM DS-R,Request to call by phone,14,12,1,2
+AmazonHelp,LLMs-EEM DS-R,Request to reach out by chat,9,8,2,1
+AmazonHelp,LLMs-EEM DS-R,Investigate Issue,67,53,11,14
+AmazonHelp,LLMs-EEM DS-R,Delivery,61,60,17,1
+AmazonHelp,LLMs-EEM DS-R,Prime,36,33,3,3
+AmazonHelp,LLMs-EEM DS-R,Alexa,7,7,0,0
+AmazonHelp,LLMs-EEM DS-R,Kindle,9,9,0,0
+AmazonHelp,LLMs-EEM DS-R,Echo,8,8,0,0
+AmazonHelp,LLMs-EEM DS-R,Bad Support,63,46,19,17
+AmazonHelp,LLMs-EEM DS-R,Order Cancellation,8,8,1,0
+AmazonHelp,LLMs-EEM DS-R,Return,10,9,0,1
+AmazonHelp,LLMs-EEM DS-R,Refund,19,18,0,1
+AmazonHelp,LLMs-EEM DS-R,Replacement,8,8,0,0
+AmazonHelp,LLMs-EEM DS-R,Account,15,15,7,0
+AmazonHelp,LLMs-EEM DS-R,Packaging,11,11,1,0
+AmazonHelp,LLMs-EEM Gemini,Provide URL,86,86,0,0
+AmazonHelp,LLMs-EEM Gemini,Request to not send personal details,9,9,0,0
+AmazonHelp,LLMs-EEM Gemini,Provide delivery date,9,7,1,2
+AmazonHelp,LLMs-EEM Gemini,Apologize,66,66,0,0
+AmazonHelp,LLMs-EEM Gemini,Refer to specialist team,14,11,2,3
+AmazonHelp,LLMs-EEM Gemini,Request to call by phone,14,14,0,0
+AmazonHelp,LLMs-EEM Gemini,Request to reach out by chat,9,9,1,0
+AmazonHelp,LLMs-EEM Gemini,Investigate Issue,67,50,6,17
+AmazonHelp,LLMs-EEM Gemini,Delivery,61,53,10,8
+AmazonHelp,LLMs-EEM Gemini,Prime,36,34,3,2
+AmazonHelp,LLMs-EEM Gemini,Alexa,7,7,0,0
+AmazonHelp,LLMs-EEM Gemini,Kindle,9,9,0,0
+AmazonHelp,LLMs-EEM Gemini,Echo,8,8,0,0
+AmazonHelp,LLMs-EEM Gemini,Bad Support,63,45,9,18
+AmazonHelp,LLMs-EEM Gemini,Order Cancellation,8,8,0,0
+AmazonHelp,LLMs-EEM Gemini,Return,10,9,0,1
+AmazonHelp,LLMs-EEM Gemini,Refund,19,18,0,1
+AmazonHelp,LLMs-EEM Gemini,Replacement,8,8,0,0
+AmazonHelp,LLMs-EEM Gemini,Account,15,14,5,1
+AmazonHelp,LLMs-EEM Gemini,Packaging,11,11,2,0
+AmazonHelp,Zero-shot DS-R,Provide URL,86,86,2,0
+AmazonHelp,Zero-shot DS-R,Request to not send personal details,9,9,2,0
+AmazonHelp,Zero-shot DS-R,Provide delivery date,9,2,1,7
+AmazonHelp,Zero-shot DS-R,Apologize,66,66,4,0
+AmazonHelp,Zero-shot DS-R,Refer to specialist team,14,9,2,5
+AmazonHelp,Zero-shot DS-R,Request to call by phone,14,12,1,2
+AmazonHelp,Zero-shot DS-R,Request to reach out by chat,9,8,2,1
+AmazonHelp,Zero-shot DS-R,Investigate Issue,67,47,16,20
+AmazonHelp,Zero-shot DS-R,Delivery,61,57,15,4
+AmazonHelp,Zero-shot DS-R,Prime,36,33,3,3
+AmazonHelp,Zero-shot DS-R,Alexa,7,7,1,0
+AmazonHelp,Zero-shot DS-R,Kindle,9,9,1,0
+AmazonHelp,Zero-shot DS-R,Echo,8,8,1,0
+AmazonHelp,Zero-shot DS-R,Bad Support,63,46,19,17
+AmazonHelp,Zero-shot DS-R,Order Cancellation,8,8,3,0
+AmazonHelp,Zero-shot DS-R,Return,10,9,0,1
+AmazonHelp,Zero-shot DS-R,Refund,19,19,2,0
+AmazonHelp,Zero-shot DS-R,Replacement,8,7,0,1
+AmazonHelp,Zero-shot DS-R,Account,15,15,11,0
+AmazonHelp,Zero-shot DS-R,Packaging,11,10,3,1
+AmazonHelp,Zero-shot Gemini,Provide URL,86,77,3,9
+AmazonHelp,Zero-shot Gemini,Request to not send personal details,9,8,0,1
+AmazonHelp,Zero-shot Gemini,Provide delivery date,9,2,1,7
+AmazonHelp,Zero-shot Gemini,Apologize,66,59,3,7
+AmazonHelp,Zero-shot Gemini,Refer to specialist team,14,11,2,3
+AmazonHelp,Zero-shot Gemini,Request to call by phone,14,12,2,2
+AmazonHelp,Zero-shot Gemini,Request to reach out by chat,9,7,10,2
+AmazonHelp,Zero-shot Gemini,Investigate Issue,67,56,20,11
+AmazonHelp,Zero-shot Gemini,Delivery,61,57,17,4
+AmazonHelp,Zero-shot Gemini,Prime,36,33,5,3
+AmazonHelp,Zero-shot Gemini,Alexa,7,6,1,1
+AmazonHelp,Zero-shot Gemini,Kindle,9,9,1,0
+AmazonHelp,Zero-shot Gemini,Echo,8,7,1,1
+AmazonHelp,Zero-shot Gemini,Bad Support,63,42,11,21
+AmazonHelp,Zero-shot Gemini,Order Cancellation,8,7,4,1
+AmazonHelp,Zero-shot Gemini,Return,10,8,0,2
+AmazonHelp,Zero-shot Gemini,Refund,19,18,1,1
+AmazonHelp,Zero-shot Gemini,Replacement,8,8,0,0
+AmazonHelp,Zero-shot Gemini,Account,15,15,9,0
+AmazonHelp,Zero-shot Gemini,Packaging,11,11,2,0
+AppleSupport,LLMs-EEM DS-R,Request DM,71,71,0,0
+AppleSupport,LLMs-EEM DS-R,Provide URL,99,98,0,1
+AppleSupport,LLMs-EEM DS-R,Request iOS version,31,31,2,0
+AppleSupport,LLMs-EEM DS-R,Request device model,20,20,0,0
+AppleSupport,LLMs-EEM DS-R,Investigate issue,68,62,15,6
+AppleSupport,LLMs-EEM DS-R,Request country,5,5,0,0
+AppleSupport,LLMs-EEM DS-R,Request device restart,5,5,0,0
+AppleSupport,LLMs-EEM DS-R,Refer to specialist team,7,7,2,0
+AppleSupport,LLMs-EEM DS-R,Recommend updating,11,10,0,1
+AppleSupport,LLMs-EEM DS-R,Recommend backing up,9,9,0,0
+AppleSupport,LLMs-EEM DS-R,iPhone,69,60,9,9
+AppleSupport,LLMs-EEM DS-R,Update,45,43,6,2
+AppleSupport,LLMs-EEM DS-R,Battery,23,23,0,0
+AppleSupport,LLMs-EEM DS-R,Unresponsive/Freezing Device,22,20,3,2
+AppleSupport,LLMs-EEM DS-R,iPad,4,4,0,0
+AppleSupport,LLMs-EEM DS-R,Mac,13,13,0,0
+AppleSupport,LLMs-EEM DS-R,TV,4,4,0,0
+AppleSupport,LLMs-EEM DS-R,Software/App,69,61,16,8
+AppleSupport,LLMs-EEM DS-R,Refund,11,11,0,0
+AppleSupport,LLMs-EEM DS-R,Provide system version,40,37,2,3
+AppleSupport,LLMs-EEM DS-R,Provide device model,29,27,3,2
+AppleSupport,LLMs-EEM DS-R,Restart device,8,7,1,1
+AppleSupport,LLMs-EEM Gemini,Request DM,71,71,0,0
+AppleSupport,LLMs-EEM Gemini,Provide URL,99,99,0,0
+AppleSupport,LLMs-EEM Gemini,Request iOS version,31,29,3,2
+AppleSupport,LLMs-EEM Gemini,Request device model,20,17,0,3
+AppleSupport,LLMs-EEM Gemini,Investigate issue,68,59,12,9
+AppleSupport,LLMs-EEM Gemini,Request country,5,5,0,0
+AppleSupport,LLMs-EEM Gemini,Request device restart,5,5,0,0
+AppleSupport,LLMs-EEM Gemini,Refer to specialist team,7,7,1,0
+AppleSupport,LLMs-EEM Gemini,Recommend updating,11,10,0,1
+AppleSupport,LLMs-EEM Gemini,Recommend backing up,9,9,0,0
+AppleSupport,LLMs-EEM Gemini,iPhone,69,64,9,5
+AppleSupport,LLMs-EEM Gemini,Update,45,43,9,2
+AppleSupport,LLMs-EEM Gemini,Battery,23,23,0,0
+AppleSupport,LLMs-EEM Gemini,Unresponsive/Freezing Device,22,20,5,2
+AppleSupport,LLMs-EEM Gemini,iPad,4,4,0,0
+AppleSupport,LLMs-EEM Gemini,Mac,13,13,0,0
+AppleSupport,LLMs-EEM Gemini,TV,4,4,0,0
+AppleSupport,LLMs-EEM Gemini,Software/App,69,57,17,12
+AppleSupport,LLMs-EEM Gemini,Refund,11,11,0,0
+AppleSupport,LLMs-EEM Gemini,Provide system version,40,33,2,7
+AppleSupport,LLMs-EEM Gemini,Provide device model,29,24,4,5
+AppleSupport,LLMs-EEM Gemini,Restart device,8,7,1,1
+AppleSupport,Zero-shot DS-R,Request DM,71,71,0,0
+AppleSupport,Zero-shot DS-R,Provide URL,99,97,0,2
+AppleSupport,Zero-shot DS-R,Request iOS version,31,31,3,0
+AppleSupport,Zero-shot DS-R,Request device model,20,20,0,0
+AppleSupport,Zero-shot DS-R,Investigate issue,68,49,36,19
+AppleSupport,Zero-shot DS-R,Request country,5,5,0,0
+AppleSupport,Zero-shot DS-R,Request device restart,5,3,0,2
+AppleSupport,Zero-shot DS-R,Refer to specialist team,7,6,2,1
+AppleSupport,Zero-shot DS-R,Recommend updating,10,9,2,1
+AppleSupport,Zero-shot DS-R,Recommend backing up,9,9,0,0
+AppleSupport,Zero-shot DS-R,iPhone,69,58,10,11
+AppleSupport,Zero-shot DS-R,Update,45,43,12,2
+AppleSupport,Zero-shot DS-R,Battery,23,23,1,0
+AppleSupport,Zero-shot DS-R,Unresponsive/Freezing Device,22,21,18,1
+AppleSupport,Zero-shot DS-R,iPad,4,4,0,0
+AppleSupport,Zero-shot DS-R,Mac,13,13,2,0
+AppleSupport,Zero-shot DS-R,TV,4,3,1,1
+AppleSupport,Zero-shot DS-R,Software/App,69,49,21,20
+AppleSupport,Zero-shot DS-R,Refund,11,11,1,0
+AppleSupport,Zero-shot DS-R,Provide system version,38,34,6,4
+AppleSupport,Zero-shot DS-R,Provide device model,29,24,4,5
+AppleSupport,Zero-shot DS-R,Restart device,8,8,4,0
+AppleSupport,Zero-shot Gemini,Request DM,71,56,0,15
+AppleSupport,Zero-shot Gemini,Provide URL,99,79,0,20
+AppleSupport,Zero-shot Gemini,Request iOS version,31,27,2,4
+AppleSupport,Zero-shot Gemini,Request device model,20,15,0,5
+AppleSupport,Zero-shot Gemini,Investigate issue,68,57,39,11
+AppleSupport,Zero-shot Gemini,Request country,5,5,0,0
+AppleSupport,Zero-shot Gemini,Request device restart,5,4,0,1
+AppleSupport,Zero-shot Gemini,Refer to specialist team,7,6,1,1
+AppleSupport,Zero-shot Gemini,Recommend updating,11,9,2,2
+AppleSupport,Zero-shot Gemini,Recommend backing up,9,8,0,1
+AppleSupport,Zero-shot Gemini,iPhone,69,51,7,18
+AppleSupport,Zero-shot Gemini,Update,45,32,6,13
+AppleSupport,Zero-shot Gemini,Battery,23,23,2,0
+AppleSupport,Zero-shot Gemini,Unresponsive/Freezing Device,22,22,14,0
+AppleSupport,Zero-shot Gemini,iPad,4,4,0,0
+AppleSupport,Zero-shot Gemini,Mac,13,12,7,1
+AppleSupport,Zero-shot Gemini,TV,4,3,1,1
+AppleSupport,Zero-shot Gemini,Software/App,69,61,35,8
+AppleSupport,Zero-shot Gemini,Refund,11,11,3,0
+AppleSupport,Zero-shot Gemini,Provide system version,40,33,2,7
+AppleSupport,Zero-shot Gemini,Provide device model,29,27,12,2
+AppleSupport,Zero-shot Gemini,Restart device,8,7,1,1
+SpotifyCares,LLMs-EEM DS-R,Provide URL,65,65,0,0
+SpotifyCares,LLMs-EEM DS-R,Request username,26,26,0,0
+SpotifyCares,LLMs-EEM DS-R,Request email address,39,39,0,0
+SpotifyCares,LLMs-EEM DS-R,Request exact issue description,7,7,0,0
+SpotifyCares,LLMs-EEM DS-R,Request device restart,14,11,0,3
+SpotifyCares,LLMs-EEM DS-R,Request OS version,15,15,0,0
+SpotifyCares,LLMs-EEM DS-R,Request device version,13,12,0,1
+SpotifyCares,LLMs-EEM DS-R,Request Spotify version,14,13,0,1
+SpotifyCares,LLMs-EEM DS-R,Request login,13,9,0,4
+SpotifyCares,LLMs-EEM DS-R,Request logout,12,10,0,2
+SpotifyCares,LLMs-EEM DS-R,Request error message,16,16,0,0
+SpotifyCares,LLMs-EEM DS-R,Refer to specialist team,18,18,3,0
+SpotifyCares,LLMs-EEM DS-R,Offer further help,17,17,6,0
+SpotifyCares,LLMs-EEM DS-R,Request DM,48,48,0,0
+SpotifyCares,LLMs-EEM DS-R,Request reinstall the app,4,4,0,0
+SpotifyCares,LLMs-EEM DS-R,Song/Artist,19,15,3,4
+SpotifyCares,LLMs-EEM DS-R,App,35,25,7,10
+SpotifyCares,LLMs-EEM DS-R,Playlist,13,13,0,0
+SpotifyCares,LLMs-EEM DS-R,Premium,25,21,7,4
+SpotifyCares,LLMs-EEM DS-R,Student Subscription,11,11,1,0
+SpotifyCares,LLMs-EEM DS-R,Family Subscription,8,8,0,0
+SpotifyCares,LLMs-EEM DS-R,Account,31,31,11,0
+SpotifyCares,LLMs-EEM DS-R,Billing/Payment,27,27,6,0
+SpotifyCares,LLMs-EEM DS-R,Hulu,5,5,0,0
+SpotifyCares,LLMs-EEM DS-R,Advertisement,10,10,0,0
+SpotifyCares,LLMs-EEM DS-R,Provide device model,11,10,3,1
+SpotifyCares,LLMs-EEM DS-R,Provide OS version,11,11,0,0
+SpotifyCares,LLMs-EEM DS-R,Provide spotify version,4,4,0,0
+SpotifyCares,LLMs-EEM DS-R,Provide username,5,5,1,0
+SpotifyCares,LLMs-EEM DS-R,Provide email address,6,6,0,0
+SpotifyCares,LLMs-EEM DS-R,Reinstall the app,4,4,0,0
+SpotifyCares,LLMs-EEM DS-R,Restart device,7,7,0,0
+SpotifyCares,LLMs-EEM DS-R,Logout,7,6,0,1
+SpotifyCares,LLMs-EEM DS-R,Login,12,11,0,1
+SpotifyCares,LLMs-EEM DS-R,Provide error message,17,14,7,3
+SpotifyCares,LLMs-EEM Gemini,Provide URL,65,65,0,0
+SpotifyCares,LLMs-EEM Gemini,Request username,26,26,0,0
+SpotifyCares,LLMs-EEM Gemini,Request email address,39,35,0,4
+SpotifyCares,LLMs-EEM Gemini,Request exact issue description,7,7,3,0
+SpotifyCares,LLMs-EEM Gemini,Request device restart,14,14,0,0
+SpotifyCares,LLMs-EEM Gemini,Request OS version,15,14,0,1
+SpotifyCares,LLMs-EEM Gemini,Request device version,13,12,0,1
+SpotifyCares,LLMs-EEM Gemini,Request Spotify version,14,14,0,0
+SpotifyCares,LLMs-EEM Gemini,Request login,13,11,0,2
+SpotifyCares,LLMs-EEM Gemini,Request logout,12,11,0,1
+SpotifyCares,LLMs-EEM Gemini,Request error message,16,12,0,4
+SpotifyCares,LLMs-EEM Gemini,Refer to specialist team,18,18,1,0
+SpotifyCares,LLMs-EEM Gemini,Offer further help,17,16,6,1
+SpotifyCares,LLMs-EEM Gemini,Request DM,48,43,0,5
+SpotifyCares,LLMs-EEM Gemini,Request reinstall the app,4,4,0,0
+SpotifyCares,LLMs-EEM Gemini,Song/Artist,19,15,3,4
+SpotifyCares,LLMs-EEM Gemini,App,35,25,7,10
+SpotifyCares,LLMs-EEM Gemini,Playlist,13,11,0,2
+SpotifyCares,LLMs-EEM Gemini,Premium,25,25,7,0
+SpotifyCares,LLMs-EEM Gemini,Student Subscription,11,9,1,2
+SpotifyCares,LLMs-EEM Gemini,Family Subscription,8,7,1,1
+SpotifyCares,LLMs-EEM Gemini,Account,31,29,8,2
+SpotifyCares,LLMs-EEM Gemini,Billing/Payment,27,25,3,2
+SpotifyCares,LLMs-EEM Gemini,Hulu,5,5,0,0
+SpotifyCares,LLMs-EEM Gemini,Advertisement,10,10,0,0
+SpotifyCares,LLMs-EEM Gemini,Provide device model,11,11,3,0
+SpotifyCares,LLMs-EEM Gemini,Provide OS version,11,10,0,1
+SpotifyCares,LLMs-EEM Gemini,Provide spotify version,4,4,0,0
+SpotifyCares,LLMs-EEM Gemini,Provide username,5,5,1,0
+SpotifyCares,LLMs-EEM Gemini,Provide email address,6,6,0,0
+SpotifyCares,LLMs-EEM Gemini,Reinstall the app,4,4,0,0
+SpotifyCares,LLMs-EEM Gemini,Restart device,7,7,0,0
+SpotifyCares,LLMs-EEM Gemini,Logout,7,6,0,1
+SpotifyCares,LLMs-EEM Gemini,Login,12,11,0,1
+SpotifyCares,LLMs-EEM Gemini,Provide error message,17,14,3,3
+SpotifyCares,Zero-shot DS-R,Provide URL,65,65,0,0
+SpotifyCares,Zero-shot DS-R,Request username,26,26,0,0
+SpotifyCares,Zero-shot DS-R,Request email address,40,39,0,1
+SpotifyCares,Zero-shot DS-R,Request exact issue description,7,5,2,2
+SpotifyCares,Zero-shot DS-R,Request device restart,14,9,0,5
+SpotifyCares,Zero-shot DS-R,Request OS version,14,14,1,0
+SpotifyCares,Zero-shot DS-R,Request device version,12,10,1,2
+SpotifyCares,Zero-shot DS-R,Request Spotify version,13,10,0,3
+SpotifyCares,Zero-shot DS-R,Request login,12,7,0,5
+SpotifyCares,Zero-shot DS-R,Request logout,13,7,0,6
+SpotifyCares,Zero-shot DS-R,Request error message,15,13,1,2
+SpotifyCares,Zero-shot DS-R,Refer to specialist team,18,14,1,4
+SpotifyCares,Zero-shot DS-R,Offer further help,17,17,75,0
+SpotifyCares,Zero-shot DS-R,Request DM,48,43,0,5
+SpotifyCares,Zero-shot DS-R,Request reinstall the app,4,4,0,0
+SpotifyCares,Zero-shot DS-R,Song/Artist,19,18,8,1
+SpotifyCares,Zero-shot DS-R,App,35,24,9,11
+SpotifyCares,Zero-shot DS-R,Playlist,13,10,0,3
+SpotifyCares,Zero-shot DS-R,Premium,25,25,10,0
+SpotifyCares,Zero-shot DS-R,Student Subscription,11,11,1,0
+SpotifyCares,Zero-shot DS-R,Family Subscription,8,8,0,0
+SpotifyCares,Zero-shot DS-R,Account,30,26,9,4
+SpotifyCares,Zero-shot DS-R,Billing/Payment,26,22,4,4
+SpotifyCares,Zero-shot DS-R,Hulu,5,4,0,1
+SpotifyCares,Zero-shot DS-R,Advertisement,10,7,1,3
+SpotifyCares,Zero-shot DS-R,Provide device model,11,9,6,2
+SpotifyCares,Zero-shot DS-R,Provide OS version,11,9,0,2
+SpotifyCares,Zero-shot DS-R,Provide spotify version,4,4,0,0
+SpotifyCares,Zero-shot DS-R,Provide username,5,5,12,0
+SpotifyCares,Zero-shot DS-R,Provide email address,6,6,1,0
+SpotifyCares,Zero-shot DS-R,Reinstall the app,4,3,1,1
+SpotifyCares,Zero-shot DS-R,Restart device,7,6,2,1
+SpotifyCares,Zero-shot DS-R,Logout,6,5,1,1
+SpotifyCares,Zero-shot DS-R,Login,11,10,3,1
+SpotifyCares,Zero-shot DS-R,Provide error message,18,12,17,6
+SpotifyCares,Zero-shot Gemini,Provide URL,65,59,0,6
+SpotifyCares,Zero-shot Gemini,Request username,26,22,0,4
+SpotifyCares,Zero-shot Gemini,Request email address,39,34,0,5
+SpotifyCares,Zero-shot Gemini,Request exact issue description,7,7,6,0
+SpotifyCares,Zero-shot Gemini,Request device restart,14,13,0,1
+SpotifyCares,Zero-shot Gemini,Request OS version,15,11,0,4
+SpotifyCares,Zero-shot Gemini,Request device version,13,10,0,3
+SpotifyCares,Zero-shot Gemini,Request Spotify version,14,10,0,4
+SpotifyCares,Zero-shot Gemini,Request login,13,8,0,5
+SpotifyCares,Zero-shot Gemini,Request logout,12,8,0,4
+SpotifyCares,Zero-shot Gemini,Request error message,16,14,0,2
+SpotifyCares,Zero-shot Gemini,Refer to specialist team,18,15,1,3
+SpotifyCares,Zero-shot Gemini,Offer further help,17,16,44,1
+SpotifyCares,Zero-shot Gemini,Request DM,48,41,1,7
+SpotifyCares,Zero-shot Gemini,Request reinstall the app,4,4,0,0
+SpotifyCares,Zero-shot Gemini,Song/Artist,19,19,19,0
+SpotifyCares,Zero-shot Gemini,App,35,32,24,3
+SpotifyCares,Zero-shot Gemini,Playlist,13,9,0,4
+SpotifyCares,Zero-shot Gemini,Premium,25,24,11,1
+SpotifyCares,Zero-shot Gemini,Student Subscription,11,10,2,1
+SpotifyCares,Zero-shot Gemini,Family Subscription,8,7,1,1
+SpotifyCares,Zero-shot Gemini,Account,31,29,15,2
+SpotifyCares,Zero-shot Gemini,Billing/Payment,27,24,7,3
+SpotifyCares,Zero-shot Gemini,Hulu,5,5,0,0
+SpotifyCares,Zero-shot Gemini,Advertisement,10,10,0,0
+SpotifyCares,Zero-shot Gemini,Provide device model,11,11,7,0
+SpotifyCares,Zero-shot Gemini,Provide OS version,11,9,2,2
+SpotifyCares,Zero-shot Gemini,Provide spotify version,4,4,1,0
+SpotifyCares,Zero-shot Gemini,Provide username,5,5,2,0
+SpotifyCares,Zero-shot Gemini,Provide email address,6,6,1,0
+SpotifyCares,Zero-shot Gemini,Reinstall the app,4,4,1,0
+SpotifyCares,Zero-shot Gemini,Restart device,7,5,4,2
+SpotifyCares,Zero-shot Gemini,Logout,7,7,4,0
+SpotifyCares,Zero-shot Gemini,Login,12,11,5,1
+SpotifyCares,Zero-shot Gemini,Provide error message,17,14,6,3
