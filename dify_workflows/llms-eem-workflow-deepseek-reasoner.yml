@@ -298,7 +298,7 @@ workflow:
           reranking_model:
             model: netease-youdao/bce-reranker-base_v1
             provider: langgenius/siliconflow/siliconflow
-          top_k: 4
+          top_k: 3
         query_attachment_selector: []
         query_variable_selector:
         - '1750337155264'

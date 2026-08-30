@@ -7,7 +7,7 @@ This repository contains the code, workflow definitions, annotated datasets, and
 LLMs-EEM extracts business-level events (activity labels) from unstructured customer-support conversations and turns them into event logs. Each inbound message is classified against a company-specific activity set by a Dify-orchestrated LLM workflow that combines four components:
 
 1. **Trigger-word constraint** — a curated trigger-word base associated with each activity;
-2. **RAG case retrieval** — four annotated exemplar cases retrieved per message as in-context demonstrations;
+2. **RAG case retrieval** — three annotated exemplar cases retrieved per message as in-context demonstrations;
 3. **Multi-path self-consistency** — ten parallel extraction passes, aggregated by a high-confidence voting rule (an activity is accepted when it receives at least 80% of the votes);
 4. **Verification pass** — a final LLM call that re-examines borderline labels before they enter the event log.
 
