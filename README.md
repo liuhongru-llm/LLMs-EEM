@@ -36,6 +36,7 @@ LLMs-EEM/
     │                           # 6 files: 3 companies x inbound/outbound; load into Dify
     │                           # as the workflow's knowledge dataset)
     ├── WorkFlow/              # LLMs-EEM (full) predictions, per backbone
+    ├── WorkFlow_10round/      # Sept 2026 re-verification run with voting caches
     ├── WorkFlow_no_RAG/       # ablation: without RAG case retrieval
     ├── WorkFlow_no_self/      # ablation: without self-consistency (single extraction pass)
     ├── WorkFlow_no_val/       # ablation: without the verification pass
@@ -43,7 +44,7 @@ LLMs-EEM/
     └── *_Evaluation_Results/  # evaluation outputs (color-scaled Excel files)
 ```
 
-The `WorkFlow*/<backbone>/` folders contain both the shipped predictions (`twcs-<company>-300-predicted-<model>.xlsx`, one `pred_<activity>` column per activity) and the per-message response caches (`nlp_cache_*.json`). The shipped predictions reproduce the results reported in the paper without re-invoking any API.
+The `WorkFlow*/<backbone>/` folders contain both the shipped predictions (`twcs-<company>-300-predicted-<model>.xlsx`, one `pred_<activity>` column per activity) and the per-message response caches (`nlp_cache_*.json`). The shipped predictions reproduce the results reported in the paper without re-invoking any API. `WorkFlow_10round/DeepSeekReasoner/` additionally ships per-message voting caches (`vote_cache_<company>_300.json`): the ten per-round 0/1 votes and the verification verdict for every message–activity pair (see [Reproduction verification](#reproduction-verification-september-2026)).
 
 ## Requirements
 
@@ -116,6 +117,20 @@ Set `input_root` / `output_root` in the `__main__` block (e.g. `'WorkFlow'` / `'
 python ablation_diagram.py
 python compare_diagram.py
 ```
+
+## Reproduction verification (September 2026)
+
+`event_extraction/WorkFlow_10round/DeepSeekReasoner/` contains an end-to-end re-run of the main configuration (10–13 September 2026) verifying the released artifact: the workflow, prompts, ten-round voting rule (an activity is accepted at ≥ 8 of 10 votes), and verification stage were executed unchanged. The run additionally records, for every message–activity pair, the ten per-round votes and the verification verdict (`vote_cache_<company>_300.json`), enabling offline sensitivity analysis of the voting threshold and the number of sampling rounds without re-invoking any API.
+
+DeepSeek decommissioned the `deepseek-reasoner` API identifier on 24 July 2026 (it maps to `deepseek-v4-flash` in thinking mode, which the shipped DSL therefore uses), so the re-run used the successor model:
+
+| Dataset | Paper (20 Mar 2026, `deepseek-reasoner`) | Re-run (Sept 2026, `deepseek-v4-flash`) |
+|---|---|---|
+| AmazonHelp | 0.911 | 0.914 |
+| AppleSupport | 0.949 | 0.905 |
+| SpotifyCares | 0.935 | 0.763 |
+
+(macro-averaged per-activity F1, same metric as the paper). The predominantly action-oriented datasets reproduce the reported results. The gap on SpotifyCares is driven by precision (macro precision 0.934 → 0.681): the successor model takes a more lenient stance on the topic-type activities that dominate this activity set (e.g., Song/Artist, App, Premium). **All results reported in the paper are those of the original runs of 20 March 2026 with `deepseek-reasoner`.**
 
 ## Data
 

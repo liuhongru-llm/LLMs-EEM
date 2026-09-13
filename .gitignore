@@ -13,3 +13,23 @@ Thumbs.db
 
 # Office temporary files
 ~$*.xlsx
+
+# 本地密钥（勿上传）
+event_extraction/dify_key.py
+
+# 本地运行产物与调试脚本（勿上传）
+event_extraction/run_*.log
+event_extraction/backup_*/
+event_extraction/Sensitivity_reconstructed/
+event_extraction/sensitivity_*.csv
+event_extraction/sensitivity_*.png
+event_extraction/sensitivity_analysis.py
+event_extraction/check_*.py
+event_extraction/clean_failed_cache.py
+event_extraction/selective_clean.py
+event_extraction/verify_cache.py
+event_extraction/WorkFlow_10round/**/backup_*/
+event_extraction/WorkFlow_10round/**/*.bak
+event_extraction/WorkFlow_10round/**/failed_rows_*.json
+event_extraction/WorkFlow_10round/**/*partial*
+event_extraction/WorkFlow_10round/TestSmoke/

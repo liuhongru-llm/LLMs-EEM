@@ -14,7 +14,7 @@ dependencies:
 - current_identifier: null
   type: marketplace
   value:
-    marketplace_plugin_unique_identifier: langgenius/deepseek:0.0.15@725407927b04e236212083d20e92830d60fa944e42cd357ef6902c160414f6f1
+    marketplace_plugin_unique_identifier: langgenius/gemini:0.9.7@c6aacc0e8fe8a9e2b3622c094370c16c2bb2e5bb53b287f532644a4f27af862f
     version: null
 kind: app
 version: 0.5.0
@@ -265,6 +265,16 @@ workflow:
           - result
           value_type: string
           variable: finalResult
+        - value_selector:
+          - '1776261232578'
+          - output
+          value_type: array[string]
+          variable: voteDetails
+        - value_selector:
+          - '1776254677921'
+          - text
+          value_type: string
+          variable: validationDetail
         selected: false
         title: 结束
         type: end
@@ -296,7 +306,7 @@ workflow:
           reranking_enable: true
           reranking_mode: reranking_model
           reranking_model:
-            model: netease-youdao/bce-reranker-base_v1
+            model: BAAI/bge-reranker-v2-m3
             provider: langgenius/siliconflow/siliconflow
           top_k: 3
         query_attachment_selector: []
@@ -365,7 +375,7 @@ workflow:
           \                key, value = line.split(\":\", 1)\n                key\
           \ = key.strip()\n                value = value.strip()\n\n             \
           \   if key in vote_count and value == \"1\":\n                    vote_count[key]\
-          \ += 1\n\n    low_conf = [k for k, v in vote_count.items() if v < 4]\n\n\
+          \ += 1\n\n    low_conf = [k for k, v in vote_count.items() if v < 8]\n\n\
           \    return {\n        \"result\": \"\\n\".join(low_conf) if low_conf else\
           \ \"无\"\n    }"
         code_language: python3
@@ -410,7 +420,7 @@ workflow:
           \                key, value = line.split(\":\", 1)\n                key\
           \ = key.strip()\n                value = value.strip()\n\n             \
           \   if key in vote_count and value == \"1\":\n                    vote_count[key]\
-          \ += 1\n\n    high_conf = [k for k, v in vote_count.items() if v >= 4]\n\
+          \ += 1\n\n    high_conf = [k for k, v in vote_count.items() if v >= 8]\n\
           \n    return {\n        \"result\": \"\\n\".join(high_conf) if high_conf\
           \ else \"无\"\n    }"
         code_language: python3
@@ -453,8 +463,8 @@ workflow:
           completion_params:
             max_tokens: 8192
           mode: chat
-          name: deepseek-reasoner
-          provider: langgenius/deepseek/deepseek
+          name: gemini-3-pro-preview
+          provider: langgenius/gemini/google
         prompt_template:
         - id: e7908889-abd3-41ef-96e0-fc326c66144c
           role: system
@@ -616,8 +626,8 @@ workflow:
           completion_params:
             max_tokens: 8192
           mode: chat
-          name: deepseek-reasoner
-          provider: langgenius/deepseek/deepseek
+          name: gemini-3-pro-preview
+          provider: langgenius/gemini/google
         prompt_template:
         - id: 163338b4-4788-45c7-9fa5-a7f20b95985d
           role: system
@@ -654,7 +664,7 @@ workflow:
       zIndex: 1002
     - data:
         code: "def main(arg1:str):\n    return {\n        \"result\": list(range(1,\
-          \ 6))  # [1,2,...,10]\n    }"
+          \ 11))  # [1,2,...,10]\n    }"
         code_language: python3
         outputs:
           result:
