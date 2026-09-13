@@ -132,6 +132,27 @@ DeepSeek decommissioned the `deepseek-reasoner` API identifier on 24 July 2026 (
 
 (macro-averaged per-activity F1, same metric as the paper). The predominantly action-oriented datasets reproduce the reported results. The gap on SpotifyCares is driven by precision (macro precision 0.934 → 0.681): the successor model takes a more lenient stance on the topic-type activities that dominate this activity set (e.g., Song/Artist, App, Premium). **All results reported in the paper are those of the original runs of 20 March 2026 with `deepseek-reasoner`.**
 
+### Offline sensitivity analysis (from the voting caches)
+
+All figures below are recomputed offline from `vote_cache_*.json` (no API calls) and therefore reflect the **September 2026 re-run model (`deepseek-v4-flash`)**, not the paper's original `deepseek-reasoner` runs. They are provided as a consistency check on the design choices, not as a re-statement of the paper's results.
+
+**Voting threshold.** With ten sampling rounds fixed, the acceptance threshold t is swept from 5 to 10 (pure voting, verification stage disabled). The deployed setting t = 8 sits at or near the macro-F1 peak for all three datasets (0.921 / 0.911 / 0.851); t = 10 (unanimity) degrades all datasets sharply, and t ≤ 7 lowers SpotifyCares by 0.3–3.1 points.
+
+| threshold | AmazonHelp | AppleSupport | SpotifyCares |
+|---|---|---|---|
+| 5 | 0.922 | 0.906 | 0.820 |
+| 6 | 0.924 | 0.906 | 0.844 |
+| 7 | 0.924 | 0.909 | 0.848 |
+| **8 (deployed)** | **0.921** | **0.911** | **0.851** |
+| 9 | 0.922 | 0.907 | 0.816 |
+| 10 | 0.860 | 0.883 | 0.755 |
+
+**Number of sampling rounds.** With the threshold set to ⌈0.8k⌉ for k rounds, macro F1 averaged over all C(10, k) subsets of the ten recorded votes: k = 5 already reaches 0.922 / 0.908 / 0.838, within 0.013 of the full k = 10 (0.921 / 0.911 / 0.851). The additional rounds mainly buy stability against near-threshold flips rather than average accuracy.
+
+**Fraction of activities below the threshold.** Of the 16,897 message–activity pairs, 89.2% receive fewer than 8 votes and enter the verification stage; however, 86.1% of all pairs are zero-vote clear negatives, so the genuinely ambiguous zone (1–7 votes) is only 3.1% of pairs. The verification acceptance rate rises monotonically with the vote count — 0.2% at 0 votes, 28.0% at 1–4 votes, 63.6% at 5–7 votes — consistent with the confidence-partition design.
+
+**SpotifyCares gap attribution.** Pure voting at t = 8 yields 0.851 on SpotifyCares, but the deployed pipeline (voting + verification) yields 0.763: under the successor model, the verification stage admits 184 additional positives on this dataset (24 zero-vote overrides and 160 borderline passes), which manifest as false positives on topic-type activities. The reproduction gap therefore stems from the successor model's verification behavior, not from the voting rule itself.
+
 ## Data
 
 - `data/labeled/` — 300 annotated inbound customer-support messages per company (AmazonHelp, AppleSupport, SpotifyCares) with binary ground-truth labels for each activity of the company's activity set.

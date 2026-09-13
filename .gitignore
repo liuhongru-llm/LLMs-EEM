@@ -24,6 +24,9 @@ event_extraction/Sensitivity_reconstructed/
 event_extraction/sensitivity_*.csv
 event_extraction/sensitivity_*.png
 event_extraction/sensitivity_analysis.py
+event_extraction/below_threshold_stats.py
+event_extraction/verdict_by_band.py
+event_extraction/override_breakdown.py
 event_extraction/check_*.py
 event_extraction/clean_failed_cache.py
 event_extraction/selective_clean.py
